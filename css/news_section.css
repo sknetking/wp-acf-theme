@@ -1,0 +1,104 @@
+.new-sec .col{
+    width: 33.33%;
+}
+.new-sec .new-block {
+    border-radius: 20px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    height: 100%;
+}
+.new-sec .new-block .img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+.new-sec .new-block .img-wrapper {
+    position: relative;
+    padding-top: 44%;
+    overflow: hidden;
+}
+.new-sec .new-block:hover .img-wrapper img{
+    transform: scale(1.2);
+}
+.new-sec .new-text-block {
+    padding: 20px;
+}
+.new-sec .new-text-block .title{
+    text-decoration: underline;
+}
+.new-sec .desc p {
+    display: inline;
+    line-height: 150.6%;
+}
+.new-sec .desc a{
+    font-weight: 800;
+}
+.new-sec .desc{
+    margin-bottom: 20px;
+}
+.new-sec .auth-date {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.new-sec .auth-date .img{
+    flex-shrink: 0;
+    height: 45px;
+    margin-right: 10px;
+}
+.new-sec .auth-date img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.new-sec .auth-date .name,
+.new-sec .auth-date .date{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    color: #6D7D8B;
+    font-family: 'Mulish';
+}
+.new-sec .auth-date .name{
+    position: relative;
+    padding-right: 15px;
+}
+.new-sec .auth-date .name:after {
+    content: "";
+    background-color: #BBC8D4;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+}
+.new-sec .row{
+    row-gap: 55px;
+}
+@media only screen and (max-width: 1199px) {
+    .new-sec .auth-date .img{
+        margin-right: 0;
+    }
+}
+@media only screen and (max-width: 1023px) {
+    .new-sec .col {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .new-sec .col {
+        width: 100%;
+    }
+    .new-sec .auth-date{
+        gap: 10px;
+    }
+    .new-sec .auth-date .name{
+        padding-right: 10px;
+    }
+}
