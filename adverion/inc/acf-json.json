@@ -1,0 +1,680 @@
+{
+    "key": "group_page_builder",
+    "title": "Page Builder",
+    "fields": [
+        {
+            "key": "field_page_builder",
+            "label": "Page Builder",
+            "name": "page_builder",
+            "type": "flexible_content",
+            "instructions": "Build your page using flexible content blocks.",
+            "button_label": "Add Section",
+            "layouts": [
+                {
+                    "key": "layout_hero_section",
+                    "name": "hero_section",
+                    "label": "Hero Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hero_title",
+                            "label": "Hero Title",
+                            "name": "hero_title",
+                            "type": "text",
+                            "instructions": "Enter the main hero title. Use <span> tags for gradient text.",
+                            "required": 1,
+                            "default_value": "Grow Your Brand Faster With <span class=\"text-gradient\">Data-Driven</span> Digital Marketing",
+                            "placeholder": "Enter hero title..."
+                        },
+                        {
+                            "key": "field_hero_subtitle",
+                            "label": "Hero Subtitle",
+                            "name": "hero_subtitle",
+                            "type": "textarea",
+                            "instructions": "Enter the hero subtitle/description.",
+                            "required": 1,
+                            "default_value": "Adverion helps businesses scale through performance marketing, SEO, and conversion-focused strategies.",
+                            "placeholder": "Enter hero subtitle...",
+                            "rows": 3,
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_hero_primary_button",
+                            "label": "Primary Button Text",
+                            "name": "hero_primary_button",
+                            "type": "text",
+                            "instructions": "Enter the text for the primary CTA button.",
+                            "required": 1,
+                            "default_value": "Get Free Strategy Call",
+                            "placeholder": "Primary button text..."
+                        },
+                        {
+                            "key": "field_hero_primary_link",
+                            "label": "Primary Button Link",
+                            "name": "hero_primary_link",
+                            "type": "url",
+                            "instructions": "Enter the URL for the primary button.",
+                            "placeholder": "https://example.com/contact"
+                        },
+                        {
+                            "key": "field_hero_secondary_button",
+                            "label": "Secondary Button Text",
+                            "name": "hero_secondary_button",
+                            "type": "text",
+                            "instructions": "Enter the text for the secondary button.",
+                            "default_value": "View Our Work",
+                            "placeholder": "Secondary button text..."
+                        },
+                        {
+                            "key": "field_hero_secondary_link",
+                            "label": "Secondary Button Link",
+                            "name": "hero_secondary_link",
+                            "type": "url",
+                            "instructions": "Enter the URL for the secondary button.",
+                            "placeholder": "https://example.com/portfolio"
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_about_story",
+                    "name": "about_story",
+                    "label": "About Story",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_story_title",
+                            "label": "Story Title",
+                            "name": "story_title",
+                            "type": "text",
+                            "instructions": "Enter the main title for the about story section.",
+                            "required": 1,
+                            "placeholder": "Our Story"
+                        },
+                        {
+                            "key": "field_story_content",
+                            "label": "Story Content",
+                            "name": "story_content",
+                            "type": "wysiwyg",
+                            "instructions": "Enter the main content for the about story section.",
+                            "required": 1,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
+                        },
+                        {
+                            "key": "field_story_image",
+                            "label": "Story Image",
+                            "name": "story_image",
+                            "type": "image",
+                            "instructions": "Upload an image for the about story section.",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all"
+                        },
+                        {
+                            "key": "field_image_position",
+                            "label": "Image Position",
+                            "name": "image_position",
+                            "type": "select",
+                            "instructions": "Choose the position of the image relative to the content.",
+                            "required": 1,
+                            "choices": {
+                                "left": "Left",
+                                "right": "Right"
+                            },
+                            "default_value": "left"
+                        },
+                        {
+                            "key": "field_show_stats",
+                            "label": "Show Statistics",
+                            "name": "show_stats",
+                            "type": "true_false",
+                            "instructions": "Toggle to show/hide statistics section.",
+                            "default_value": 1,
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_stats",
+                            "label": "Statistics",
+                            "name": "stats",
+                            "type": "repeater",
+                            "instructions": "Add statistics items to display.",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_show_stats",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "layout": "table",
+                            "button_label": "Add Stat",
+                            "sub_fields": [
+                                {
+                                    "key": "field_stat_number",
+                                    "label": "Stat Number",
+                                    "name": "stat_number",
+                                    "type": "text",
+                                    "instructions": "Enter the statistic number (e.g., 500+, 25%).",
+                                    "required": 1,
+                                    "wrapper": {
+                                        "width": "50"
+                                    },
+                                    "placeholder": "500+"
+                                },
+                                {
+                                    "key": "field_stat_suffix",
+                                    "label": "Stat Suffix",
+                                    "name": "stat_suffix",
+                                    "type": "text",
+                                    "instructions": "Enter suffix for the number (e.g., %, +, years).",
+                                    "wrapper": {
+                                        "width": "25"
+                                    },
+                                    "placeholder": "%"
+                                },
+                                {
+                                    "key": "field_stat_label",
+                                    "label": "Stat Label",
+                                    "name": "stat_label",
+                                    "type": "text",
+                                    "instructions": "Enter the statistic label.",
+                                    "required": 1,
+                                    "wrapper": {
+                                        "width": "75"
+                                    },
+                                    "placeholder": "Happy Clients"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_services",
+                    "name": "services",
+                    "label": "Services",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_services_section_title",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Enter the section title.",
+                            "placeholder": "Our Services"
+                        },
+                        {
+                            "key": "field_services_section_subtitle",
+                            "label": "Section Subtitle",
+                            "name": "section_subtitle",
+                            "type": "textarea",
+                            "instructions": "Enter the section subtitle.",
+                            "placeholder": "We offer comprehensive digital marketing solutions.",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_services_list",
+                            "label": "Services",
+                            "name": "services",
+                            "type": "repeater",
+                            "instructions": "Add services to display.",
+                            "layout": "row",
+                            "button_label": "Add Service",
+                            "sub_fields": [
+                                {
+                                    "key": "field_service_icon",
+                                    "label": "Service Icon",
+                                    "name": "service_icon",
+                                    "type": "image",
+                                    "instructions": "Upload an icon for the service.",
+                                    "return_format": "id",
+                                    "preview_size": "thumbnail",
+                                    "wrapper": {
+                                        "width": "33"
+                                    }
+                                },
+                                {
+                                    "key": "field_service_font_awesome",
+                                    "label": "Font Awesome Icon",
+                                    "name": "font_awesome_class",
+                                    "type": "text",
+                                    "instructions": "Enter Font Awesome class (e.g., fas fa-chart-line). <a href=\"https://fontawesome.com/icons\" target=\"_blank\">Browse icons</a>",
+                                    "placeholder": "fas fa-chart-line",
+                                    "wrapper": {
+                                        "width": "33"
+                                    }
+                                },
+                                {
+                                    "key": "field_service_image",
+                                    "label": "Service Image",
+                                    "name": "service_image",
+                                    "type": "image",
+                                    "instructions": "Upload an image for the service.",
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "wrapper": {
+                                        "width": "34"
+                                    }
+                                },
+                                {
+                                    "key": "field_service_title",
+                                    "label": "Service Title",
+                                    "name": "service_title",
+                                    "type": "text",
+                                    "instructions": "Enter the service title.",
+                                    "required": 1,
+                                    "placeholder": "Digital Marketing",
+                                    "wrapper": {
+                                        "width": "50"
+                                    }
+                                },
+                                {
+                                    "key": "field_service_link",
+                                    "label": "Service Link",
+                                    "name": "service_link",
+                                    "type": "url",
+                                    "instructions": "Enter a URL for the service (optional).",
+                                    "placeholder": "https://example.com/service",
+                                    "wrapper": {
+                                        "width": "50"
+                                    }
+                                },
+                                {
+                                    "key": "field_service_description",
+                                    "label": "Service Description",
+                                    "name": "service_description",
+                                    "type": "wysiwyg",
+                                    "instructions": "Enter the service description.",
+                                    "required": 1,
+                                    "tabs": "text",
+                                    "toolbar": "basic",
+                                    "media_upload": 0,
+                                    "wrapper": {
+                                        "width": "100"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_features",
+                    "name": "features",
+                    "label": "Features",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_features_section_title",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Enter the section title.",
+                            "placeholder": "Why Choose Us"
+                        },
+                        {
+                            "key": "field_features_section_subtitle",
+                            "label": "Section Subtitle",
+                            "name": "section_subtitle",
+                            "type": "textarea",
+                            "instructions": "Enter the section subtitle.",
+                            "placeholder": "Discover what makes us different.",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_features_list",
+                            "label": "Features",
+                            "name": "features",
+                            "type": "repeater",
+                            "instructions": "Add features to display.",
+                            "layout": "table",
+                            "button_label": "Add Feature",
+                            "sub_fields": [
+                                {
+                                    "key": "field_feature_icon",
+                                    "label": "Feature Icon",
+                                    "name": "feature_icon",
+                                    "type": "image",
+                                    "instructions": "Upload an icon for the feature.",
+                                    "return_format": "id",
+                                    "preview_size": "thumbnail"
+                                },
+                                {
+                                    "key": "field_feature_font_awesome",
+                                    "label": "Font Awesome Class",
+                                    "name": "font_awesome_class",
+                                    "type": "text",
+                                    "instructions": "Enter Font Awesome class (e.g., fas fa-rocket).",
+                                    "placeholder": "fas fa-rocket"
+                                },
+                                {
+                                    "key": "field_feature_title",
+                                    "label": "Feature Title",
+                                    "name": "feature_title",
+                                    "type": "text",
+                                    "instructions": "Enter the feature title.",
+                                    "required": 1,
+                                    "placeholder": "Expert Team"
+                                },
+                                {
+                                    "key": "field_feature_description",
+                                    "label": "Feature Description",
+                                    "name": "feature_description",
+                                    "type": "wysiwyg",
+                                    "instructions": "Enter the feature description.",
+                                    "required": 1,
+                                    "tabs": "text",
+                                    "toolbar": "basic",
+                                    "media_upload": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_process",
+                    "name": "process",
+                    "label": "Process",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_process_section_title",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Enter the section title.",
+                            "placeholder": "Our Process"
+                        },
+                        {
+                            "key": "field_process_section_subtitle",
+                            "label": "Section Subtitle",
+                            "name": "section_subtitle",
+                            "type": "textarea",
+                            "instructions": "Enter the section subtitle.",
+                            "placeholder": "How we work with you.",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_process_steps",
+                            "label": "Process Steps",
+                            "name": "process_steps",
+                            "type": "repeater",
+                            "instructions": "Add process steps.",
+                            "layout": "table",
+                            "button_label": "Add Step",
+                            "sub_fields": [
+                                {
+                                    "key": "field_step_title",
+                                    "label": "Step Title",
+                                    "name": "step_title",
+                                    "type": "text",
+                                    "instructions": "Enter the step title.",
+                                    "required": 1,
+                                    "placeholder": "Discovery"
+                                },
+                                {
+                                    "key": "field_step_description",
+                                    "label": "Step Description",
+                                    "name": "step_description",
+                                    "type": "wysiwyg",
+                                    "instructions": "Enter the step description.",
+                                    "required": 1,
+                                    "tabs": "text",
+                                    "toolbar": "basic",
+                                    "media_upload": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_results",
+                    "name": "results",
+                    "label": "Results",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_results_section_title",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Enter the section title.",
+                            "placeholder": "Our Results"
+                        },
+                        {
+                            "key": "field_results_section_subtitle",
+                            "label": "Section Subtitle",
+                            "name": "section_subtitle",
+                            "type": "textarea",
+                            "instructions": "Enter the section subtitle.",
+                            "placeholder": "Numbers that speak for themselves.",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_results_list",
+                            "label": "Results",
+                            "name": "results",
+                            "type": "repeater",
+                            "instructions": "Add results to display.",
+                            "layout": "table",
+                            "button_label": "Add Result",
+                            "sub_fields": [
+                                {
+                                    "key": "field_result_number",
+                                    "label": "Result Number",
+                                    "name": "result_number",
+                                    "type": "text",
+                                    "instructions": "Enter the result number.",
+                                    "required": 1,
+                                    "wrapper": {
+                                        "width": "50"
+                                    },
+                                    "placeholder": "500"
+                                },
+                                {
+                                    "key": "field_result_suffix",
+                                    "label": "Result Suffix",
+                                    "name": "result_suffix",
+                                    "type": "text",
+                                    "instructions": "Enter suffix (e.g., %, +, years).",
+                                    "wrapper": {
+                                        "width": "25"
+                                    },
+                                    "placeholder": "%"
+                                },
+                                {
+                                    "key": "field_result_text",
+                                    "label": "Result Text",
+                                    "name": "result_text",
+                                    "type": "text",
+                                    "instructions": "Enter the result label.",
+                                    "required": 1,
+                                    "wrapper": {
+                                        "width": "75"
+                                    },
+                                    "placeholder": "Happy Clients"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_client_logos",
+                    "name": "client_logos",
+                    "label": "Client Logos",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_client_logos_section_title",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Enter the section title.",
+                            "placeholder": "Trusted by Leading Brands"
+                        },
+                        {
+                            "key": "field_client_logos_list",
+                            "label": "Logos",
+                            "name": "logos",
+                            "type": "repeater",
+                            "instructions": "Add client logos.",
+                            "layout": "table",
+                            "button_label": "Add Logo",
+                            "sub_fields": [
+                                {
+                                    "key": "field_logo_image",
+                                    "label": "Logo Image",
+                                    "name": "logo_image",
+                                    "type": "image",
+                                    "instructions": "Upload the client logo.",
+                                    "return_format": "id",
+                                    "preview_size": "medium"
+                                },
+                                {
+                                    "key": "field_logo_text",
+                                    "label": "Logo Text",
+                                    "name": "logo_text",
+                                    "type": "text",
+                                    "instructions": "Enter text to display if no image (fallback).",
+                                    "placeholder": "Client Name"
+                                },
+                                {
+                                    "key": "field_logo_link",
+                                    "label": "Logo Link",
+                                    "name": "logo_link",
+                                    "type": "url",
+                                    "instructions": "Enter a URL for the logo (optional).",
+                                    "placeholder": "https://example.com"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "layout_cta",
+                    "name": "cta",
+                    "label": "Call to Action",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_cta_section_title",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Enter the CTA title.",
+                            "required": 1,
+                            "placeholder": "Ready to Grow Your Business?"
+                        },
+                        {
+                            "key": "field_cta_section_subtitle",
+                            "label": "Section Subtitle",
+                            "name": "section_subtitle",
+                            "type": "textarea",
+                            "instructions": "Enter the CTA subtitle.",
+                            "placeholder": "Let's discuss how we can help you achieve your goals.",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_cta_primary_text",
+                            "label": "Primary Button Text",
+                            "name": "primary_cta_text",
+                            "type": "text",
+                            "instructions": "Enter the primary button text.",
+                            "required": 1,
+                            "placeholder": "Get Started"
+                        },
+                        {
+                            "key": "field_cta_primary_url",
+                            "label": "Primary Button URL",
+                            "name": "primary_cta_url",
+                            "type": "url",
+                            "instructions": "Enter the primary button URL.",
+                            "required": 1,
+                            "placeholder": "https://example.com/contact"
+                        },
+                        {
+                            "key": "field_cta_secondary_text",
+                            "label": "Secondary Button Text",
+                            "name": "secondary_cta_text",
+                            "type": "text",
+                            "instructions": "Enter the secondary button text.",
+                            "placeholder": "Learn More"
+                        },
+                        {
+                            "key": "field_cta_secondary_url",
+                            "label": "Secondary Button URL",
+                            "name": "secondary_cta_url",
+                            "type": "url",
+                            "instructions": "Enter the secondary button URL.",
+                            "placeholder": "https://example.com/about"
+                        },
+                        {
+                            "key": "field_cta_background_style",
+                            "label": "Background Style",
+                            "name": "background_style",
+                            "type": "select",
+                            "instructions": "Choose the background style.",
+                            "required": 1,
+                            "choices": {
+                                "gradient": "Gradient (Default)",
+                                "solid": "Solid Color",
+                                "image": "Background Image"
+                            },
+                            "default_value": "gradient"
+                        },
+                        {
+                            "key": "field_cta_background_color",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "color_picker",
+                            "instructions": "Choose a background color (for solid style).",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_cta_background_style",
+                                        "operator": "==",
+                                        "value": "solid"
+                                    }
+                                ]
+                            ]
+                        },
+                        {
+                            "key": "field_cta_background_image",
+                            "label": "Background Image",
+                            "name": "background_image",
+                            "type": "image",
+                            "instructions": "Upload a background image (for image style).",
+                            "return_format": "id",
+                            "preview_size": "large",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_cta_background_style",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Page builder for creating flexible page layouts."
+}
